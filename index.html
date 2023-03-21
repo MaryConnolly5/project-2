@@ -1,5 +1,33 @@
 <!doctype html>
 <html lang="en">
+  div {
+    margin: 20px;
+    font-size: 16px;
+  }
+  input {
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-bottom: 1px solid black;
+    transition: all .3s ease-in-out;
+  }
+  input:focus {
+    border-bottom: 2px solid blue;
+    outline: 1px solid grey;
+    outline-offset: 4px;
+  }
+  input:hover:not(:focus) {
+    border-bottom: 2px solid grey; 
+  }
+  
+  /** accessibility enhancement to not animate the changes possibly
+  for users that have motion activated disabilities **/
+  @media (prefers-reduced-motion) {
+    input {
+      transition: none;
+    }
+  }
+  
 
 <head>
   <meta charset="utf-8">
