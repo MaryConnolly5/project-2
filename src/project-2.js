@@ -6,7 +6,7 @@ class Project2 extends LitElement {
   static properties = {
     header: { type: String },
   }
-
+  
   static styles = css`
     :host {
       min-height: 100vh;
@@ -20,7 +20,9 @@ class Project2 extends LitElement {
       margin: 0 auto;
       text-align: center;
       background-color: var(--project-2-background-color);
+
     }
+  
 
     main {
       flex-grow: 1;
@@ -54,6 +56,11 @@ class Project2 extends LitElement {
     super();
     this.header = 'My app';
   }
+  // <a class="title badge-title double category-14"
+  // id="badge_337" 
+  // badge-id="337" data-model="badge"
+  // href=:/badges/337/earn">
+// marys partial badge
 
   render() {
     return html`
