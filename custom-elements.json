@@ -4,6 +4,198 @@
   "modules": [
     {
       "kind": "javascript-module",
+      "path": "api/badge-search.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "handler",
+          "parameters": [
+            {
+              "name": "request"
+            },
+            {
+              "name": "res"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "handler",
+            "module": "api/badge-search.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/badge-list.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "BadgeList",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tag",
+              "static": true
+            },
+            {
+              "kind": "method",
+              "name": "updateBadges"
+            },
+            {
+              "kind": "method",
+              "name": "searchThis",
+              "parameters": [
+                {
+                  "name": "items"
+                },
+                {
+                  "name": "searchForThis"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "badges",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "privacy": "public",
+              "attribute": "badges"
+            },
+            {
+              "kind": "field",
+              "name": "searchForThis",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "privacy": "public",
+              "attribute": "searchForThis"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "badges",
+              "fieldName": "badges"
+            },
+            {
+              "name": "searchForThis",
+              "fieldName": "searchForThis"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BadgeList",
+          "declaration": {
+            "name": "BadgeList",
+            "module": "src/badge-list.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "BadgeList",
+            "module": "src/badge-list.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/badge-search.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "BadgeSearch",
+          "members": [
+            {
+              "kind": "method",
+              "name": "wordChanged",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "header",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Badge Search'",
+              "privacy": "public",
+              "attribute": "header"
+            },
+            {
+              "kind": "field",
+              "name": "searchForThis",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "privacy": "public",
+              "attribute": "searchForThis"
+            },
+            {
+              "kind": "field",
+              "name": "data",
+              "privacy": "public",
+              "attribute": "data"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "header",
+              "fieldName": "header"
+            },
+            {
+              "name": "data",
+              "fieldName": "data"
+            },
+            {
+              "name": "searchForThis",
+              "fieldName": "searchForThis"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "badge-search",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "badge-search",
+          "declaration": {
+            "name": "BadgeSearch",
+            "module": "src/badge-search.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/project-2.js",
       "declarations": [
         {
@@ -17,15 +209,82 @@
               "type": {
                 "text": "string"
               },
-              "default": "'My app'",
+              "default": "\"Technology & Information\"",
               "privacy": "public",
               "attribute": "header"
+            },
+            {
+              "kind": "field",
+              "name": "title",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"APA Style Citations: Introduction \"",
+              "privacy": "public",
+              "attribute": "title"
+            },
+            {
+              "kind": "field",
+              "name": "creator",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Creator: Victoria Raish\""
+            },
+            {
+              "kind": "field",
+              "name": "img",
+              "default": "APAStyle",
+              "privacy": "public",
+              "attribute": "img"
+            },
+            {
+              "kind": "field",
+              "name": "bordertopcolor",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\""
+            },
+            {
+              "kind": "field",
+              "name": "bordermiddlecolor",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\""
+            },
+            {
+              "kind": "field",
+              "name": "borderbottomcolor",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\""
+            },
+            {
+              "kind": "field",
+              "name": "author",
+              "privacy": "public",
+              "attribute": "author"
             }
           ],
           "attributes": [
             {
               "name": "header",
               "fieldName": "header"
+            },
+            {
+              "name": "title",
+              "fieldName": "title"
+            },
+            {
+              "name": "author",
+              "fieldName": "author"
+            },
+            {
+              "name": "img",
+              "fieldName": "img"
             }
           ],
           "superclass": {
@@ -38,11 +297,95 @@
       ],
       "exports": [
         {
+          "kind": "js",
+          "name": "Project2",
+          "declaration": {
+            "name": "Project2",
+            "module": "src/project-2.js"
+          }
+        },
+        {
           "kind": "custom-element-definition",
           "name": "project-2",
           "declaration": {
             "name": "Project2",
             "module": "src/project-2.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/search-bar.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "SearchBar",
+          "members": [
+            {
+              "kind": "method",
+              "name": "inputChange",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "topic",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Search Content, Topics, and People'",
+              "privacy": "public",
+              "attribute": "topic"
+            },
+            {
+              "kind": "field",
+              "name": "word",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "privacy": "public",
+              "attribute": "word"
+            }
+          ],
+          "events": [
+            {
+              "name": "word-changed",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "topic",
+              "fieldName": "topic"
+            },
+            {
+              "name": "word",
+              "fieldName": "word"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "search-bar",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "search-bar",
+          "declaration": {
+            "name": "SearchBar",
+            "module": "src/search-bar.js"
           }
         }
       ]
